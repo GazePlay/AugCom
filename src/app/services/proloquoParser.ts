@@ -151,7 +151,7 @@ export class ProloquoParser {
         getParentPage.ElementIDsList[(word.colonne - 1) + (word.ligne - 1) * 8] = idOfWord;
       }
 
-      if (tempElement.findIndex(elt => elt.ID === idOfWord) === -1) {
+      if (tempElement.findIndex(elt => elt.ID === idOfWord) === -1 && word != undefined) {
         tempElement.push(this.setUpNewGridElement(idOfWord, getType, word));
       }
 
@@ -230,7 +230,7 @@ export class ProloquoParser {
       idOfWord,
       type,
       '',
-      this.getColor(word.ID),
+      this.getColor(word.wordID),
       'black',
       0,
       [
